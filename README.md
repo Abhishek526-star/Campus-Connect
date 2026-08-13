@@ -16,7 +16,6 @@ Campus Connect provides networking, mentorship, scholarships, events, QR-based a
 - [🚀 Getting Started](#-getting-started)
 - [🔐 Environment Variables](#-environment-variables)
 - [🌱 Database Seeding](#-database-seeding)
-- [👤 Demo Accounts](#-demo-accounts)
 - [📚 API Documentation](#-api-documentation)
 - [🧪 Testing](#-testing)
 - [☁️ Deployment](#️-deployment)
@@ -565,19 +564,6 @@ The seed process creates:
 
 ---
 
-# 👤 Demo Accounts
-
-| Role | Email | Password |
-|---|---|---|
-| 🔴 Admin | `admin@campus.edu` | `Admin@123` |
-| 🟣 Faculty | `faculty1@campus.edu` | `Faculty@123` |
-| 🟢 Alumni | `alumni1@campus.edu` | `Alumni@123` |
-| 🔵 Student | `student1@campus.edu` | `Student@123` |
-
-> ⚠️ These credentials are for local/demo environments only. Change or remove them before production deployment.
-
----
-
 # 📚 API Documentation
 
 The complete API documentation is available at:
@@ -777,14 +763,6 @@ campus-connect/
 ---
 
 # 📈 Project Status
-
-| Phase | Status |
-|---|---|
-| Phase 1 — Scaffolding & Tooling | ✅ Complete |
-| Phase 2 — Backend Foundation | ✅ Complete |
-| Phase 3 — Frontend Foundation | ✅ Complete |
-| Phase 4 — Pages & Modules | ✅ Complete |
-| Phase 5 — Testing & Deployment Hardening | ✅ Complete |
 
 ### Current Implementation
 
