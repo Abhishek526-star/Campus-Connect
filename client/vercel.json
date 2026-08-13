@@ -1,11 +1,11 @@
 {
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "https://campus-connect-api.onrender.com/api/$1"
+      "source": "/api/:path*",
+      "destination": "https://campus-connect-api-d1y2.onrender.com/api/:path*"
     },
     {
-      "source": "/((?!api|assets).*)",
+      "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
   ]
