@@ -1,261 +1,776 @@
+<div align="center">
+
 # 🎓 Campus Connect
 
-> **Connect. Learn. Give Back. Grow Together.**
+### Connect. Learn. Give Back. Grow Together.
 
-A production-ready, full-stack **MERN alumni–student community platform** designed to connect **students, faculty, alumni, and administrators** in one unified digital ecosystem.
+**A full-stack MERN community platform connecting students, faculty, alumni, and administrators in one digital ecosystem.**
 
-Campus Connect provides networking, mentorship, scholarships, events, QR-based attendance, jobs & internships, study resources, community interaction, and real-time communication.
+<p>
+  <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white" alt="React 19" />
+  <img src="https://img.shields.io/badge/Node.js-Backend-339933?logo=node.js&logoColor=white" alt="Node.js" />
+  <img src="https://img.shields.io/badge/Express-5-000000?logo=express&logoColor=white" alt="Express" />
+  <img src="https://img.shields.io/badge/MongoDB-Atlas-47A248?logo=mongodb&logoColor=white" alt="MongoDB" />
+  <img src="https://img.shields.io/badge/Socket.IO-Realtime-010101?logo=socket.io&logoColor=white" alt="Socket.IO" />
+  <img src="https://img.shields.io/badge/Tailwind-CSS-06B6D4?logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
+</p>
+
+<p>
+  <img src="https://img.shields.io/badge/Tests-40-success" alt="40 Tests" />
+  <img src="https://img.shields.io/badge/Modules-30%2B-blue" alt="30+ Modules" />
+  <img src="https://img.shields.io/badge/Pages-40%2B-orange" alt="40+ Pages" />
+  <img src="https://img.shields.io/badge/Database%20Collections-34-purple" alt="34 Collections" />
+</p>
+
+</div>
 
 ---
 
-## 📌 Table of Contents
+## 📖 Table of Contents
 
+- [🎯 Overview](#-overview)
+- [💡 Problem Statement](#-problem-statement)
+- [🚀 Solution](#-solution)
+- [👥 User Roles](#-user-roles)
 - [✨ Features](#-features)
+- [🖼️ Screenshots](#️-screenshots)
 - [🧱 Tech Stack](#-tech-stack)
-- [🏗️ Architecture](#️-architecture)
-- [🚀 Getting Started](#-getting-started)
+- [🏗️ System Architecture](#️-system-architecture)
+- [🔄 Core Workflows](#-core-workflows)
+- [📁 Project Structure](#-project-structure)
+- [⚙️ Installation](#️-installation)
 - [🔐 Environment Variables](#-environment-variables)
+- [🗄️ Database Setup](#️-database-setup)
 - [🌱 Database Seeding](#-database-seeding)
 - [📚 API Documentation](#-api-documentation)
 - [🧪 Testing](#-testing)
 - [☁️ Deployment](#️-deployment)
 - [🛠️ Troubleshooting](#️-troubleshooting)
-- [📦 Project Structure](#-project-structure)
-- [✅ Project Status](#-project-status)
+- [🔒 Security](#-security)
+- [🛣️ Future Enhancements](#️-future-enhancements)
+- [🤝 Contributing](#-contributing)
+- [📄 License](#-license)
+- [👨‍💻 Author](#-author)
 
 ---
 
-## ✨ Features
+# 🎯 Overview
 
-### 🔐 Authentication & Authorization
+**Campus Connect** is a production-oriented MERN-based alumni–student community platform that brings the major activities of a college ecosystem into one centralized application.
 
-- JWT-based authentication
+The platform connects:
+
+- 🎓 Students
+- 👨‍🏫 Faculty
+- 🧑‍💼 Alumni
+- 🛡️ Administrators
+
+It provides a unified environment for:
+
+- Networking
+- Mentorship
+- Scholarships
+- Donations
+- Events
+- QR-based attendance
+- Jobs and internships
+- Study resources
+- Community discussions
+- Meetings
+- Real-time communication
+- Career preparation
+- Placement preparation
+
+The project was built page-by-page from a detailed specification and includes a dedicated development roadmap and API documentation.
+
+---
+
+# 💡 Problem Statement
+
+College communities often use separate platforms for:
+
+- Alumni networking
+- Student mentorship
+- Scholarship applications
+- Event registration
+- Attendance
+- Job and internship opportunities
+- Study resources
+- Announcements
+- Communication
+
+This creates fragmented information, duplicated workflows, and poor interaction between students, alumni, faculty, and administrators.
+
+### Campus Connect solves this by providing a single platform where these workflows are connected.
+
+---
+
+# 🚀 Solution
+
+Campus Connect provides a centralized digital campus community with:
+
+```text
+                    CAMPUS CONNECT
+                          │
+        ┌─────────────────┼─────────────────┐
+        │                 │                 │
+     Students          Alumni            Faculty
+        │                 │                 │
+        └─────────────────┼─────────────────┘
+                          │
+                    Administrator
+                          │
+        ┌─────────────────┼─────────────────┐
+        │                 │                 │
+   Networking        Scholarships       Careers
+        │                 │                 │
+   Mentorship        Donations         Placements
+        │                 │                 │
+    Events          Community          Resources
+        │                 │                 │
+        └────────── Real-Time Chat ────────┘
+```
+
+---
+
+# 👥 User Roles
+
+## 🎓 Student
+
+Students can:
+
+- Create and manage profiles
+- Connect with alumni, faculty, and other students
+- Send and receive messages
+- Attend events
+- Apply for scholarships
+- Explore jobs and internships
+- Access study resources
+- Participate in community discussions
+- Join mentorship programs
+- Follow career roadmaps
+- Prepare for placements
+
+## 🧑‍💼 Alumni
+
+Alumni can:
+
+- Build professional profiles
+- Connect with students and other alumni
+- Provide mentorship
+- Share opportunities
+- Participate in meetings
+- Create or support scholarship campaigns
+- Donate to students
+- Share community posts
+- Provide referrals
+
+## 👨‍🏫 Faculty
+
+Faculty can:
+
+- Maintain professional profiles
+- Connect with students and alumni
+- Participate in meetings
+- Share resources
+- Participate in community activities
+- Publish or interact with announcements
+
+## 🛡️ Administrator
+
+Administrators can:
+
+- Manage users
+- Approve faculty/alumni registrations
+- Moderate content
+- Manage events
+- Manage scholarships
+- Monitor donations
+- Manage opportunities
+- Manage resources
+- View analytics
+- Generate reports
+- Review audit logs
+- Configure system settings
+
+---
+
+# ✨ Features
+
+## 🔐 Authentication & RBAC
+
+- JWT access tokens
 - Rotating HTTP-only refresh tokens
 - Email verification
 - Password reset
-- Admin approval for faculty and alumni registrations
-- Role-Based Access Control (RBAC)
-- Frontend and backend authorization
+- Google authentication
+- Admin approval workflow
+- Role-Based Access Control
+- Frontend + backend authorization
 
-### 👤 Profiles & Privacy
+---
 
-- Role-specific user profiles
-- Education and experience
-- Achievements and projects
-- Certifications and social links
-- Avatar uploads
-- Field-level privacy controls:
-  - Public
-  - Connections
-  - Private
-- Server-side privacy enforcement
+## 👤 Profiles & Privacy
 
-### 🤝 People & Connections
+Role-specific profiles support:
+
+- Education
+- Experience
+- Achievements
+- Projects
+- Certifications
+- Social links
+- Profile avatars
+
+### Privacy Levels
+
+Each profile field can have different visibility:
+
+```text
+Public
+   ↓
+Connections
+   ↓
+Private
+```
+
+Privacy rules are enforced server-side.
+
+---
+
+## 🤝 Networking & Connections
 
 - Searchable user directory
-- Advanced filters
+- Advanced filtering
 - Connection requests
-- Accept / reject / cancel connections
+- Accept / reject requests
+- Cancel requests
 - Remove connections
 - Connection suggestions
 
-### 💬 Real-Time Chat
+---
 
-- One-to-one messaging using Socket.IO
+## 💬 Real-Time Messaging
+
+Built using **Socket.IO**.
+
+Features include:
+
+- One-to-one messaging
 - Online/offline presence
 - Typing indicators
 - Read receipts
-- File attachments
+- Attachments
 - Delete-for-self
 - Block users
 - Report users
 
-### 📅 Meetings
+---
 
-- One-to-one and group meetings
-- Google Meet / Zoom links
-- Meeting invitations
-- Accept / reject invitations
-- Rescheduling
-- Meeting reminders
+## 📅 Meetings
 
-### 🎫 Events & QR Attendance
+Users can schedule:
 
-- Create and manage events
-- Registration system
-- Capacity and registration deadline protection
-- Expiring rotating QR tokens
-- Camera-based QR scanning
-- Duplicate attendance prevention
-- Manual attendance marking
-- CSV / Excel / PDF attendance exports
+- One-to-one meetings
+- Group meetings
 
-### 🎓 Scholarships & Donations
+Supported meeting links:
 
-- Scholarship campaigns
-- Student scholarship applications
-- Document uploads
-- Application review workflow
-- Transparent funding dashboards
-- Razorpay test-mode payments
-- HMAC signature verification
-- Payment webhooks
-- PDF donation receipts
-
-### 💼 Jobs & Internships
-
-- Job and internship opportunity board
-- Search and filtering
-- Save opportunities
-- Share opportunities
-- Apply through the platform or externally
-- Report opportunities
-- Admin moderation
-
-### 📚 Study Resources
-
-Dedicated resource library for:
-
-- GATE preparation
-- Semester studies
-- Placement preparation
-- Development resources
+- Google Meet
+- Zoom
 
 Additional features:
 
-- Ratings
-- Bookmarks
-- Downloads
-- Admin approval
+- Invitations
+- Accept / reject
+- Rescheduling
+- Reminders
 
-### 📰 Community & Announcements
+---
 
-- Community posts
+## 🎫 Events & QR Attendance
+
+The event system provides:
+
+- Event creation
+- Event registration
+- Capacity limits
+- Registration deadlines
+- QR-based attendance
+- Expiring QR tokens
+- Camera scanning
+- Duplicate prevention
+- Manual attendance marking
+- CSV export
+- Excel export
+- PDF export
+
+---
+
+## 🎓 Scholarships
+
+Scholarship functionality includes:
+
+- Scholarship campaigns
+- Student applications
+- Document submission
+- Application review workflow
+- Application state management
+- Funding dashboards
+- Donation integration
+
+---
+
+## 💳 Donations & Payments
+
+Razorpay is integrated for donation payments.
+
+Includes:
+
+- Test-mode payments
+- HMAC signature verification
+- Payment webhooks
+- Payment status tracking
+- Refund event handling
+- PDF receipts
+
+---
+
+## 💼 Jobs & Internships
+
+Opportunity management includes:
+
+- Job listings
+- Internship listings
+- Search
+- Filters
+- Save opportunities
+- Share opportunities
+- Platform applications
+- External applications
+- Reporting
+- Admin moderation
+
+---
+
+## 📚 Study Resources
+
+Resources are organized for:
+
+- GATE
+- Semester
+- Placements
+- Development
+
+Users can:
+
+- Rate resources
+- Bookmark resources
+- Download resources
+
+Administrators can approve resources before publication.
+
+---
+
+## 📰 Community
+
+A social-style community system supports:
+
+- Posts
 - Likes
 - Comments
 - Shares
 - Saves
 - Reports
-- Rich-text composer
-- Targeted announcements
-- Automatic notifications
+- Rich content composer
 
-### 🔔 Notifications
+---
 
-- 25 notification types
-- Real-time in-app notifications
-- Email notifications
-- Mark as read
+## 📢 Announcements
+
+Administrators can publish targeted announcements with automatic notifications.
+
+---
+
+## 🔔 Notifications
+
+The system supports **25 notification types**.
+
+Notifications can be delivered through:
+
+- In-app real-time notifications
+- Email
+
+Users can:
+
+- Mark notifications as read
 - Mark all as read
-- Notification badges
+- View notification badges
 
-### 🔎 Global Search
+---
 
-Search across multiple platform entities with type-based filtering.
+## 🔎 Global Search
 
-### 🧑‍🏫 Mentorship & Referrals
+Global search aggregates results across multiple platform entities with type-based filtering.
+
+---
+
+## 🧑‍🏫 Mentorship & Referrals
 
 - Mentor directory
 - Mentorship opportunities
 - Referral offers
-- QR-verifiable participation certificates
+- Participation certificates
+- QR-verifiable certificates
 
-### 🚀 Career & Placement
+---
 
-- 9 predefined career roadmaps
+## 🛣️ Career & Placement Preparation
+
+The platform includes:
+
+- 9 seeded career roadmaps
 - Placement preparation hub
 - Career-focused resources
 
-### 🛡️ Admin Dashboard
+---
 
-Admin features include:
+## 📊 Admin Analytics
+
+The administration suite provides:
 
 - KPI dashboard
-- 6 analytical charts
+- 6 charts
 - User management
 - Content moderation
-- Finance management
+- Finance monitoring
 - 9 exportable reports
 - Audit logs
 - System settings
 
-### 📊 Additional
+---
 
-- Role-specific analytics
-- 40 automated tests
+# 🖼️ Screenshots
+
+> Add your actual screenshots inside `docs/screenshots/`.
+
+Recommended screenshots:
+
+```text
+docs/
+└── screenshots/
+    ├── landing-page.png
+    ├── login.png
+    ├── student-dashboard.png
+    ├── alumni-profile.png
+    ├── community.png
+    ├── chat.png
+    ├── events.png
+    ├── qr-attendance.png
+    ├── scholarships.png
+    ├── jobs.png
+    ├── resources.png
+    └── admin-dashboard.png
+```
+
+Example:
+
+```md
+## 🖥️ Dashboard
+
+![Student Dashboard](docs/screenshots/student-dashboard.png)
+```
+
+### ⭐ Recommended Screenshots for Your GitHub Repository
+
+If this is primarily a portfolio project, prioritize:
+
+1. Landing page
+2. Student dashboard
+3. Alumni profile
+4. Community page
+5. Real-time chat
+6. Events + QR attendance
+7. Scholarship page
+8. Admin dashboard
 
 ---
 
 # 🧱 Tech Stack
 
-| Layer | Technologies |
+## Frontend
+
+| Technology | Purpose |
 |---|---|
-| **Frontend** | React 19, Vite 8, Tailwind CSS 4, React Router 8, Redux Toolkit, RTK Query, React Hook Form, Zod, Recharts, Lucide, Socket.IO Client, Sonner, html5-qrcode |
-| **Backend** | Node.js, Express 5, MongoDB, Mongoose 9, JWT, bcryptjs, Socket.IO, Multer, Cloudinary, Razorpay, Nodemailer, Helmet, CORS, express-rate-limit, compression |
-| **Testing** | Vitest, Supertest |
-| **Deployment** | Vercel / Netlify, Render / Railway / AWS, MongoDB Atlas, Cloudinary |
+| React 19 | UI development |
+| Vite 8 | Build tooling |
+| Tailwind CSS 4 | Styling |
+| React Router 8 | Routing |
+| Redux Toolkit | Global state |
+| RTK Query | API state management |
+| React Hook Form | Forms |
+| Zod | Validation |
+| Recharts | Data visualization |
+| Lucide | Icons |
+| Socket.IO Client | Real-time communication |
+| Sonner | Notifications |
+| html5-qrcode | QR scanning |
+
+## Backend
+
+| Technology | Purpose |
+|---|---|
+| Node.js | Runtime |
+| Express 5 | REST API |
+| MongoDB | Database |
+| Mongoose 9 | ODM |
+| JWT | Authentication |
+| bcryptjs | Password hashing |
+| Socket.IO | Real-time communication |
+| Multer | File uploads |
+| Cloudinary | File storage |
+| Razorpay | Payments |
+| Nodemailer | Email |
+| Helmet | Security headers |
+| CORS | Cross-origin security |
+| express-rate-limit | Rate limiting |
+| compression | Response compression |
+
+## Testing
+
+- Vitest
+- Supertest
+- 40 automated tests
+
+## Deployment
+
+- Vercel / Netlify → Frontend
+- Render / Railway / AWS → Backend
+- MongoDB Atlas → Database
+- Cloudinary → File storage
+
+The project's current stack and deployment targets are documented in the source README.
 
 ---
 
-# 🏗️ Architecture
+# 🏗️ System Architecture
 
 ```text
-                    ┌─────────────────────────────┐
-                    │       React SPA              │
-                    │ RTK Query + Socket.IO Client │
-                    └──────────────┬──────────────┘
-                                   │
-                       REST /api + WebSocket
-                                   │
-                                   ▼
-                    ┌─────────────────────────────┐
-                    │       Express API            │
-                    │                             │
-                    │ Routes                      │
-                    │ Validators (Zod)            │
-                    │ Controllers                 │
-                    │ Services                    │
-                    │ Models                      │
-                    └──────────────┬──────────────┘
-                                   │
-             ┌─────────────────────┼─────────────────────┐
-             │                     │                     │
-             ▼                     ▼                     ▼
-       ┌────────────┐       ┌────────────┐       ┌────────────┐
-       │  MongoDB   │       │ Cloudinary │       │  Razorpay  │
-       │ 34 Collections│    │   Files    │       │ Payments   │
-       └────────────┘       └────────────┘       └────────────┘
-                                   │
-                                   ▼
-                              SMTP / Email
+┌─────────────────────────────────────────────────────┐
+│                    CLIENT                           │
+│                                                     │
+│ React + Vite + Tailwind                             │
+│ Redux Toolkit + RTK Query                           │
+│ React Router + Socket.IO Client                     │
+└───────────────────────┬─────────────────────────────┘
+                        │
+                REST API / WebSocket
+                        │
+                        ▼
+┌─────────────────────────────────────────────────────┐
+│                    SERVER                           │
+│                                                     │
+│ Express.js                                          │
+│                                                     │
+│ Routes                                              │
+│    ↓                                                │
+│ Zod Validation                                      │
+│    ↓                                                │
+│ Controllers                                         │
+│    ↓                                                │
+│ Services                                            │
+│    ↓                                                │
+│ Mongoose Models                                     │
+└───────────────────────┬─────────────────────────────┘
+                        │
+        ┌───────────────┼────────────────┐
+        │               │                │
+        ▼               ▼                ▼
+   ┌─────────┐    ┌───────────┐    ┌──────────┐
+   │ MongoDB │    │ Cloudinary│    │ Razorpay │
+   │         │    │           │    │          │
+   │ Database│    │ File Store│    │ Payments │
+   └─────────┘    └───────────┘    └──────────┘
+                        │
+                        ▼
+                   ┌──────────┐
+                   │   SMTP   │
+                   │  Gmail   │
+                   └──────────┘
 ```
-
-### Backend Middleware
-
-The backend includes:
-
-- Authentication
-- RBAC
-- Request validation
-- Rate limiting
-- Sanitization
-- File uploads
-- Centralized error handling
 
 ---
 
-# 🚀 Getting Started
+# 🔄 Core Workflows
+
+## 🎓 Scholarship Workflow
+
+```text
+Alumni/Admin
+     │
+     ▼
+Create Scholarship Campaign
+     │
+     ▼
+Student Applies
+     │
+     ▼
+Upload Documents
+     │
+     ▼
+Application Review
+     │
+     ├── Rejected
+     │
+     └── Approved
+             │
+             ▼
+       Scholarship Award
+```
+
+---
+
+## 🎫 Event Attendance Workflow
+
+```text
+Admin
+ │
+ ▼
+Create Event
+ │
+ ▼
+Student Registers
+ │
+ ▼
+Generate QR Token
+ │
+ ▼
+Student Scans QR
+ │
+ ▼
+Validate Token
+ │
+ ├── Invalid / Expired → Reject
+ │
+ └── Valid → Mark Attendance
+                    │
+                    ▼
+              Attendance Report
+```
+
+---
+
+## 💳 Donation Workflow
+
+```text
+Donor
+ │
+ ▼
+Select Scholarship
+ │
+ ▼
+Create Razorpay Order
+ │
+ ▼
+Complete Payment
+ │
+ ▼
+Verify Signature
+ │
+ ▼
+Process Webhook
+ │
+ ▼
+Update Donation
+ │
+ ▼
+Generate Receipt
+```
+
+---
+
+## 🤝 Connection Workflow
+
+```text
+User A
+  │
+  ▼
+Send Connection Request
+  │
+  ▼
+User B
+  │
+  ├── Accept ──────► Connected
+  │
+  └── Reject ──────► Request Closed
+```
+
+---
+
+# 📁 Project Structure
+
+```text
+campus-connect/
+│
+├── client/
+│   ├── src/
+│   ├── public/
+│   └── package.json
+│
+├── server/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── services/
+│   ├── validators/
+│   ├── tests/
+│   ├── seed/
+│   └── package.json
+│
+├── docs/
+│   ├── API.md
+│   └── screenshots/
+│
+├── DEVELOPMENT_ROADMAP.md
+├── .env.example
+├── vercel.json
+├── render.yaml
+└── package.json
+```
+
+The current project structure contains separate React client and Express server applications, API documentation, deployment configuration, and a development roadmap.
+
+---
+
+# ⚙️ Installation
+
+## Prerequisites
+
+Make sure the following are installed:
+
+- Node.js
+- npm
+- MongoDB or MongoDB Atlas
+- Git
+
+Optional services:
+
+- Cloudinary
+- Razorpay
+- Google OAuth
+- Gmail SMTP
+
+---
 
 ## 1. Clone the Repository
 
 ```bash
-git clone <your-repository-url>
+git clone <YOUR_REPOSITORY_URL>
 cd campus-connect
 ```
 
 ## 2. Install Dependencies
-
-Install dependencies for both the client and server:
 
 ```bash
 npm install
@@ -263,31 +778,33 @@ npm install
 
 ## 3. Configure Environment Variables
 
-Copy the example environment file:
-
 ```bash
 cp .env.example server/.env
 ```
 
-Then update the values inside:
+Update:
 
 ```text
 server/.env
 ```
 
-## 4. Start the Development Servers
+with your credentials.
+
+## 4. Start the Application
 
 ```bash
 npm run dev
 ```
 
-The application will run at:
+### Local URLs
 
 | Service | URL |
 |---|---|
-| 🌐 Frontend | http://localhost:5173 |
-| ⚙️ API | http://localhost:5000 |
-| ❤️ API Health Check | http://localhost:5000/api/health |
+| Frontend | `http://localhost:5173` |
+| Backend | `http://localhost:5000` |
+| Health Check | `http://localhost:5000/api/health` |
+
+These development commands and ports correspond to the current project configuration.
 
 ---
 
@@ -295,16 +812,16 @@ The application will run at:
 
 | Command | Description |
 |---|---|
-| `npm run dev` | Start frontend and backend concurrently |
-| `npm run dev:server` | Start only the backend |
-| `npm run dev:client` | Start only the frontend |
-| `npm run build` | Build the frontend for production |
-| `npm run start` | Start the API server in production |
-| `npm run seed` | Seed the database |
-| `npm run seed -- --force` | Reset and re-seed the database |
-| `npm run test` | Run automated tests |
+| `npm run dev` | Run client and server concurrently |
+| `npm run dev:server` | Run backend only |
+| `npm run dev:client` | Run frontend only |
+| `npm run build` | Build frontend |
+| `npm run start` | Start production API |
+| `npm run seed` | Seed database |
+| `npm run seed -- --force` | Reset and seed database |
+| `npm run test` | Run tests |
 | `npm run lint` | Run ESLint |
-| `npm run format` | Format the project using Prettier |
+| `npm run format` | Run Prettier |
 
 ---
 
@@ -316,21 +833,15 @@ Create:
 server/.env
 ```
 
-using:
-
-```text
-.env.example
-```
-
 ## Application
 
 ```env
-PORT=
-CLIENT_URL=
-NODE_ENV=
+PORT=5000
+CLIENT_URL=http://localhost:5173
+NODE_ENV=development
 ```
 
-## Database
+## MongoDB
 
 ```env
 MONGO_URI=
@@ -345,7 +856,7 @@ JWT_ACCESS_EXPIRES_IN=
 JWT_REFRESH_EXPIRES_IN=
 ```
 
-## Google Authentication
+## Google OAuth
 
 ```env
 GOOGLE_CLIENT_ID=
@@ -375,15 +886,15 @@ SMTP_USER=
 SMTP_PASSWORD=
 ```
 
-> ⚠️ **Never commit `.env` files or real credentials to GitHub.**
+The required environment-variable groups are based on the project's existing configuration.
+
+> 🔒 **Never commit real API keys, passwords, JWT secrets, or `.env` files to Git.**
 
 ---
 
-# 🗄️ MongoDB Setup
+# 🗄️ Database Setup
 
 ## Local MongoDB
-
-Install MongoDB locally and use:
 
 ```env
 MONGO_URI=mongodb://127.0.0.1:27017/campus_connect
@@ -391,182 +902,54 @@ MONGO_URI=mongodb://127.0.0.1:27017/campus_connect
 
 ## MongoDB Atlas
 
-1. Create a MongoDB Atlas cluster.
+1. Create an Atlas cluster.
 2. Create a database user.
 3. Configure Network Access.
-4. Add your development IP address.
-5. For Render deployment, configure the appropriate network access.
-6. Copy the Atlas connection string into `MONGO_URI`.
-
----
-
-# ☁️ Cloudinary Setup
-
-Cloudinary is used for file and image uploads.
-
-1. Create a Cloudinary account.
-2. Open the Cloudinary dashboard.
-3. Copy:
-   - Cloud Name
-   - API Key
-   - API Secret
-4. Add them to `server/.env`.
-
-Without Cloudinary credentials, development uploads fall back to:
-
-```text
-server/uploads/
-```
-
----
-
-# 💳 Razorpay Setup
-
-Campus Connect uses Razorpay for donation payments.
-
-## Test Mode
-
-1. Create a Razorpay account.
-2. Open **Dashboard → Settings → API Keys**.
-3. Enable **Test Mode**.
-4. Generate API keys.
-5. Add them to `server/.env`.
-
-```env
-RAZORPAY_KEY_ID=
-RAZORPAY_KEY_SECRET=
-```
-
-## Webhook Configuration
-
-For production, configure:
-
-```text
-POST /api/donations/webhook
-```
-
-Recommended events:
-
-```text
-payment.captured
-payment.failed
-refund.processed
-```
-
-Add the webhook secret:
-
-```env
-RAZORPAY_WEBHOOK_SECRET=
-```
-
-### Test Card
-
-```text
-Card: 4111 1111 1111 1111
-Expiry: Any future date
-CVV: Any CVV
-```
-
----
-
-# 🔑 Google Sign-In Setup
-
-1. Open Google Cloud Console.
-2. Go to **APIs & Services → Credentials**.
-3. Create an **OAuth Client ID**.
-4. Select **Web Application**.
-5. Add authorized JavaScript origins:
-
-```text
-http://localhost:5173
-```
-
-6. Add your production frontend origin.
-7. Add the client ID to both:
-
-```text
-server/.env
-client/.env
-```
-
-Example:
-
-```env
-GOOGLE_CLIENT_ID=
-VITE_GOOGLE_CLIENT_ID=
-```
-
-Restart both servers after making the changes.
-
----
-
-# 📧 Gmail SMTP Setup
-
-Campus Connect uses Gmail SMTP for transactional emails.
-
-## Requirements
-
-Enable:
-
-- Google 2-Step Verification
-- Gmail App Password
-
-Then configure:
-
-```env
-SMTP_USER=yourname@gmail.com
-SMTP_PASSWORD=your-16-char-app-password
-```
-
-Emails include:
-
-- Email verification
-- Welcome emails
-- Password reset
-- Donation receipts
-- Other transactional notifications
-
-In development, if SMTP credentials are not configured, email links are logged to the server console.
+4. Add your IP address.
+5. Copy the connection string.
+6. Add it to `MONGO_URI`.
 
 ---
 
 # 🌱 Database Seeding
 
-Run:
+Seed the development database:
 
 ```bash
 npm run seed
 ```
 
-To reset and seed the database:
+Force reset and reseed:
 
 ```bash
 npm run seed -- --force
 ```
 
-The seed process creates:
+The existing seed configuration provides:
 
-- 1 Admin
-- 5 Faculty
-- 15 Alumni
-- 30 Students
-- 7 Events
-- 2 Meetings
-- 4 Scholarship Campaigns
-- 6 Paid Donations
-- 5 Opportunities
-- 6 Resources
-- 6 Community Posts
-- 4 Announcements
-- 7 Connections
-- 1 Demo Conversation
-- 9 Career Roadmaps
+```text
+1 Admin
+5 Faculty
+15 Alumni
+30 Students
+7 Events
+2 Meetings
+4 Scholarship Campaigns
+6 Paid Donations
+5 Opportunities
+6 Resources
+6 Community Posts
+4 Announcements
+7 Connections
+1 Demo Conversation
+9 Career Roadmaps
+```
 
 ---
 
 # 📚 API Documentation
 
-The complete API documentation is available at:
+Detailed API documentation is available at:
 
 ```text
 docs/API.md
@@ -574,34 +957,35 @@ docs/API.md
 
 It contains:
 
-- Endpoint catalog
+- Endpoints
+- HTTP methods
 - Request payloads
 - Response formats
 - Authentication requirements
-- Role/access information
+- Access levels
 
 ---
 
 # 🧪 Testing
 
-Run the automated test suite:
+Run the test suite:
 
 ```bash
 npm run test
 ```
 
-The project currently contains **40 automated tests across 8 suites**.
+Current test coverage includes **40 tests across 8 suites**.
 
-Tests cover:
+### Tested Areas
 
 - Authentication
 - Registration
 - Email verification
 - Login
-- Refresh token rotation
+- Refresh-token rotation
 - Logout
-- Forgot/reset password
-- RBAC authorization
+- Password reset
+- RBAC
 - Event registration
 - QR attendance
 - Scholarship applications
@@ -610,116 +994,106 @@ Tests cover:
 - Payment webhooks
 - Job posting
 - Job moderation
-- Chat messaging
-- User blocking
+- Chat
+- Blocking
 - API validation
-
-> Local MongoDB is required for the test suite.
 
 ---
 
 # ☁️ Deployment
 
-## Frontend → Vercel
+## Frontend — Vercel
 
-1. Import the repository into Vercel.
-2. Set the root directory to:
-
-```text
-client
-```
-
-3. Build command:
-
-```bash
-npm run build
-```
-
-4. Output directory:
+Recommended configuration:
 
 ```text
-dist
+Root Directory: client
+Build Command: npm run build
+Output Directory: dist
 ```
 
-5. Configure the required environment variables.
-6. Ensure API and Socket.IO requests are correctly rewritten/proxied.
-
-The project includes:
-
-```text
-vercel.json
-```
+The repository already includes `vercel.json`.
 
 ---
 
-## Backend → Render
+## Backend — Render
 
-The backend can be deployed using Render.
-
-### Configuration
-
-**Build Command**
-
-```bash
+```text
+Build Command:
 npm install --workspace server
-```
 
-**Start Command**
-
-```bash
+Start Command:
 npm run start
 ```
 
-**Health Check**
+Health check:
 
 ```text
 /api/health
 ```
 
-Configure:
-
-- MongoDB Atlas
-- JWT secrets
-- Cloudinary
-- Razorpay
-- Gmail SMTP
-- `CLIENT_URL`
-
-The project includes:
-
-```text
-render.yaml
-```
-
-for deployment configuration.
+Configure all production environment variables in the Render dashboard.
 
 ---
 
-## Database → MongoDB Atlas
+## Database — MongoDB Atlas
 
-Use the MongoDB Atlas connection string as:
+Use your Atlas connection string:
 
 ```env
 MONGO_URI=
 ```
 
-Database indexes are defined in the Mongoose models.
+---
+
+## File Storage — Cloudinary
+
+Configure:
+
+```env
+CLOUDINARY_CLOUD_NAME=
+CLOUDINARY_API_KEY=
+CLOUDINARY_API_SECRET=
+```
+
+---
+
+# 🔒 Security
+
+Campus Connect implements multiple application-security controls, including:
+
+- JWT authentication
+- HTTP-only refresh tokens
+- Role-Based Access Control
+- Server-side authorization
+- Zod request validation
+- Password hashing with bcryptjs
+- Helmet security headers
+- CORS configuration
+- Rate limiting
+- Input sanitization
+- Payment signature verification
+- Razorpay webhook verification
+- Privacy enforcement
+- User blocking/reporting
+
+> Production deployments should use strong, unique secrets and should never expose private credentials in source control.
 
 ---
 
 # 🛠️ Troubleshooting
 
-| Problem | Solution |
+| Issue | Solution |
 |---|---|
-| API won't start: `MONGO_URI is not set` | Create `server/.env` using `.env.example` |
-| Login shows `pending admin approval` | Faculty/alumni registrations require admin approval |
-| Razorpay setup error | Add Razorpay test-mode credentials and restart the server |
-| Emails are not arriving | Configure Gmail SMTP credentials |
-| Files are saved locally | Configure Cloudinary credentials for production |
-| Port already in use | Stop the process using ports `5173` or `5000` |
-| Tests cannot connect to MongoDB | Ensure MongoDB is running on port `27017` |
+| `MONGO_URI is not set` | Create `server/.env` |
+| Login shows pending approval | Approve faculty/alumni account from Admin |
+| Razorpay error | Configure test-mode Razorpay credentials |
+| Emails not arriving | Configure Gmail SMTP |
+| Files stored locally | Configure Cloudinary |
+| Port already in use | Stop the process using ports `5173` / `5000` |
+| Tests cannot connect | Start MongoDB on port `27017` |
 
-### Free Ports — Linux/macOS
+### Linux / macOS
 
 ```bash
 fuser -k 5173/tcp
@@ -728,97 +1102,176 @@ fuser -k 5000/tcp
 
 ---
 
-# 📦 Project Structure
+# 🛣️ Future Enhancements
 
-```text
-campus-connect/
-│
-├── client/
-│   └── React SPA
-│       ├── Vite
-│       ├── Tailwind CSS
-│       ├── Redux Toolkit
-│       ├── RTK Query
-│       └── Socket.IO Client
-│
-├── server/
-│   ├── Express API
-│   ├── REST APIs
-│   ├── Socket.IO
-│   ├── Services
-│   ├── Models
-│   ├── Middleware
-│   ├── Tests
-│   └── Seed Scripts
-│
-├── docs/
-│   └── API.md
-│
-├── DEVELOPMENT_ROADMAP.md
-├── vercel.json
-├── render.yaml
-└── package.json
-```
+Potential future improvements for Campus Connect include:
+
+- 📱 Progressive Web App / mobile application
+- 🤖 AI-powered mentor recommendations
+- 🤖 AI-based career roadmap recommendations
+- 🔍 Advanced semantic search
+- 📊 More advanced analytics
+- 📧 Notification preference management
+- 🏢 Company/recruiter portal
+- 🎥 Integrated video meetings
+- 🏆 Gamification and community badges
+- 📈 Advanced alumni engagement analytics
+- 🌐 Multi-college / multi-institution support
+
+> These are proposed future enhancements and are **not currently represented as implemented features**.
 
 ---
 
-# 📈 Project Status
+# 📊 Project Metrics
 
-### Current Implementation
-
-- **34 database models**
-- **30+ modules**
-- **40+ pages**
-- **40 automated tests**
-- API documentation
-- Deployment configurations
-- Authentication & RBAC
-- Real-time communication
-- Payment integration
-- QR attendance
-- Scholarship system
-- Job/internship portal
-- Community platform
-- Admin dashboard
+| Metric | Current Status |
+|---|---:|
+| Database Collections | **34** |
+| Application Modules | **30+** |
+| Pages | **40+** |
+| Automated Tests | **40** |
+| Notification Types | **25** |
+| Career Roadmaps | **9** |
+| Admin Reports | **9** |
+| Admin Dashboard Charts | **6** |
 
 ---
 
 # 🏆 Project Highlights
 
-Campus Connect combines multiple campus-community workflows into a single platform:
+### Why this project stands out
+
+**1. Full-stack architecture**
 
 ```text
-Students ───────┐
-                │
-Faculty ────────┤
-                ├──────► Campus Connect ◄────── Alumni
-                │
-Administrators ─┘
-                         │
-       ┌─────────────────┼─────────────────┐
-       │                 │                 │
-   Networking        Mentorship       Scholarships
-       │                 │                 │
-    Events          Jobs/Internships   Donations
-       │                 │                 │
-    Community       Study Resources     Placement
-       │                 │                 │
-       └──────────── Real-Time Chat ───────┘
+React
+  ↓
+RTK Query
+  ↓
+Express REST API
+  ↓
+Mongoose
+  ↓
+MongoDB
 ```
 
+**2. Real-time functionality**
+
+Socket.IO enables:
+
+- Messaging
+- Presence
+- Typing indicators
+- Read receipts
+- Notifications
+
+**3. Secure authentication**
+
+- JWT access tokens
+- Rotating refresh tokens
+- HTTP-only cookies
+- RBAC
+- Email verification
+
+**4. Payment integration**
+
+Razorpay integration includes:
+
+- Order creation
+- Payment verification
+- HMAC validation
+- Webhooks
+- Receipts
+
+**5. Production-oriented deployment**
+
+The project includes deployment configurations for:
+
+- Vercel
+- Render
+- MongoDB Atlas
+- Cloudinary
+
+**6. Automated testing**
+
+40 tests cover major business-critical workflows.
+
 ---
 
-## 📖 Documentation
+# 🤝 Contributing
 
-For detailed project architecture and development history, see:
+Contributions are welcome.
 
-- `DEVELOPMENT_ROADMAP.md`
-- `docs/API.md`
+### Development Workflow
+
+```bash
+# Create a branch
+git checkout -b feature/your-feature
+
+# Make your changes
+
+# Run tests
+npm run test
+
+# Run lint
+npm run lint
+
+# Commit
+git commit -m "feat: add your feature"
+
+# Push
+git push origin feature/your-feature
+```
+
+Then open a Pull Request.
+
+For a public repository, adding a dedicated `CONTRIBUTING.md` is preferable as the contribution process grows; GitHub recommends repository-level contribution guidance alongside the README.
 
 ---
 
-## ⭐ Project
+# 📄 License
 
-**Campus Connect**
+This project is currently **not assigned a license in the provided project documentation**.
 
-> **Connect. Learn. Give Back. Grow Together.**
+If you intend to publish Campus Connect as open-source software, add an appropriate `LICENSE` file and update this section. GitHub notes that without a license, default copyright rules apply, so users generally do not receive permission to reproduce, distribute, or create derivatives of the code.
+
+---
+
+# 👨‍💻 Author
+
+### Abhishek Kumar
+
+**B.Tech — Computer Science Engineering**
+
+Interested in:
+
+- Full-Stack Development
+- MERN Stack
+- Backend Engineering
+- Cloud & Deployment
+- Generative AI
+- Data Structures & Algorithms
+
+---
+
+# ⭐ Support the Project
+
+If you find **Campus Connect** useful or interesting:
+
+- ⭐ Star the repository
+- 🍴 Fork the repository
+- 🐛 Report bugs
+- 💡 Suggest features
+- 🤝 Contribute improvements
+
+---
+
+<div align="center">
+
+### 🎓 Campus Connect
+
+**Connect. Learn. Give Back. Grow Together.**
+
+Built with ❤️ using the MERN Stack.
+
+</div>
