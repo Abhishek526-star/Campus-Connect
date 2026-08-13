@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# npm local cache
+.npm/
+
+# Build output
+dist/
+build/
+
+# Environment files — never commit real credentials
+.env
+.env.local
+.env.*.local
+
+# Uploads (dev fallback for Cloudinary)
+server/uploads/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Test coverage
+coverage/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+uploads/

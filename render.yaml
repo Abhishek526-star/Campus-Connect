@@ -1,0 +1,45 @@
+# Render blueprint for the Campus Connect API server.
+# Web app deploys separately to Vercel/Netlify (see README → Deployment).
+services:
+  - type: web
+    name: campus-connect-api
+    runtime: node
+    plan: free
+    buildCommand: npm install --workspace server
+    startCommand: npm run start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        sync: false # set in the Render dashboard (MongoDB Atlas URI)
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_REFRESH_SECRET
+        generateValue: true
+      - key: CLIENT_URL
+        value: https://your-client.vercel.app # replace with your Vercel URL (also allows Socket.IO CORS)
+      - key: GOOGLE_CLIENT_ID
+        sync: false # same value as VITE_GOOGLE_CLIENT_ID in client/.env
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
+      - key: RAZORPAY_KEY_ID
+        sync: false
+      - key: RAZORPAY_KEY_SECRET
+        sync: false
+      - key: RAZORPAY_WEBHOOK_SECRET
+        sync: false
+      - key: SMTP_HOST
+        sync: false # smtp.gmail.com is auto-detected for @gmail.com users — leave empty
+      - key: SMTP_PORT
+        value: 587
+      - key: SMTP_USER
+        sync: false # your Gmail address
+      - key: SMTP_PASSWORD
+        sync: false # Gmail app password
+      - key: SMTP_FROM
+        value: "" # keep empty → sends as SMTP_USER automatically (Gmail rejects other From addresses)

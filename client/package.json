@@ -1,0 +1,40 @@
+{
+  "name": "campus-connect-client",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Campus Connect web app — React SPA",
+  "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
+    "@hookform/resolvers": "^5.7.1",
+    "@reduxjs/toolkit": "^2.12.0",
+    "axios": "^1.19.0",
+    "date-fns": "^4.4.0",
+    "html5-qrcode": "^2.3.8",
+    "lucide-react": "^1.31.0",
+    "qrcode": "^1.5.4",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-hook-form": "^7.85.0",
+    "react-redux": "^9.3.0",
+    "react-router": "^8.3.0",
+    "recharts": "^3.10.1",
+    "socket.io-client": "^4.8.3",
+    "sonner": "^2.0.8",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@vitejs/plugin-react": "^6.0.5",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.2.1"
+  }
+}
