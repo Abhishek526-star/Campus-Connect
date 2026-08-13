@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -14,19 +14,11 @@ import { Card, CardContent } from '../components/ui/Card.jsx';
 import { Input } from '../components/ui/Input.jsx';
 import { IconButton } from '../components/ui/IconButton.jsx';
 import { Badge } from '../components/ui/Badge.jsx';
-import { getInitials } from '../utils/format.js';
 
 const loginSchema = z.object({
   email: z.email('Please provide a valid email address'),
   password: z.string().min(1, 'Password is required').max(128, 'Password is too long'),
 });
-
-const DEMO_ACCOUNTS = [
-  { role: 'Admin', email: 'admin@campus.edu', password: 'Admin@123' },
-  { role: 'Faculty', email: 'faculty1@campus.edu', password: 'Faculty@123' },
-  { role: 'Alumni', email: 'alumni1@campus.edu', password: 'Alumni@123' },
-  { role: 'Student', email: 'student1@campus.edu', password: 'Student@123' },
-];
 
 /**
  * Login page — real authentication with the JWT + rotating-refresh flow.
@@ -62,10 +54,30 @@ export function LoginPage() {
 
   useGoogleSignIn(handleGoogleCredential);
 
+  // Anti browser-autofill: the password input starts readOnly so browsers /
+  // password managers never fill it on page load; the first click unlocks it.
+  const [passwordLocked, setPasswordLocked] = useState(true);
+
+  // Once unlocked, place the cursor in the field — this makes the very first
+  // click work (the browser skipped caret placement while the field was
+  // still readonly at mousedown time).
+  useEffect(() => {
+    if (passwordLocked) return;
+    const el = document.getElementById('login-password');
+    if (el) {
+      el.focus();
+      const length = el.value?.length ?? 0;
+      try {
+        el.setSelectionRange(length, length);
+      } catch {
+        // non-input elements / old browsers — focus alone is enough
+      }
+    }
+  }, [passwordLocked]);
+
   const {
     register,
     handleSubmit,
-    setValue,
     formState: { errors },
   } = useForm({
     resolver: zodResolver(loginSchema),
@@ -103,7 +115,7 @@ export function LoginPage() {
   };
 
   return (
-    <main className="flex min-h-[calc(100vh-4rem)] items-center justify-center bg-linear-to-br from-slate-100 via-white to-primary-50 px-4 py-12">
+    <main className="flex min-h-[calc(100vh-4rem)] items-center justify-center bg-gradient-to-br from-slate-100 via-white to-primary-50 px-4 py-12">
       <div className="w-full max-w-md">
         {/* Heading */}
         <div className="mb-8 text-center">
@@ -151,19 +163,38 @@ export function LoginPage() {
               <div>
                 <Input
                   label="Password"
+                  id="login-password"
                   type={showPassword ? 'text' : 'password'}
-                  autoComplete="current-password"
-                  placeholder="••••••••"
+                  autoComplete="new-password"
+                  placeholder="Enter your password"
                   required
                   leftIcon={Lock}
                   error={errors.password?.message}
                   className="pr-11"
+                  readOnly={passwordLocked}
+                  // First click: unlock AND prevent the browser from swallowing
+                  // caret placement on the still-readonly field. The effect
+                  // below focuses + positions the cursor once unlocked.
+                  onMouseDown={(event) => {
+                    if (passwordLocked) {
+                      event.preventDefault();
+                      setPasswordLocked(false);
+                    }
+                  }}
+                  onFocus={() => passwordLocked && setPasswordLocked(false)}
                   {...register('password')}
                 />
-                <div className="relative z-10 -mt-9 flex justify-end pr-3">
+                {/* pointer-events-none: this full-width wrapper must never
+                    block clicks into the field — only the eye button itself
+                    stays clickable. */}
+                <div className="pointer-events-none relative z-10 -mt-9 flex justify-end pr-3">
                   <IconButton
                     label={showPassword ? 'Hide password' : 'Show password'}
-                    onClick={() => setShowPassword((value) => !value)}
+                    className="pointer-events-auto"
+                    onClick={() => {
+                      setPasswordLocked(false);
+                      setShowPassword((value) => !value);
+                    }}
                   >
                     {showPassword ? <EyeOff /> : <Eye />}
                   </IconButton>
@@ -205,37 +236,6 @@ export function LoginPage() {
             </p>
           </CardContent>
         </Card>
-
-        {/* Demo accounts (seed data) — one click fills the form */}
-        {/* <div className="mt-6">
-          <p className="mb-2.5 text-center text-xs font-medium uppercase tracking-wide text-slate-400">
-            Demo accounts (seeded)
-          </p>
-          <div className="grid grid-cols-2 gap-2">
-            {DEMO_ACCOUNTS.map((account) => (
-              <button
-                key={account.role}
-                type="button"
-                onClick={() => {
-                  setValue('email', account.email, { shouldValidate: true });
-                  setValue('password', account.password, { shouldValidate: true });
-                }}
-                className="flex items-center gap-2.5 rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-left shadow-sm transition-colors hover:border-primary-300 hover:bg-primary-50/50"
-              >
-                <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary-100 text-xs font-bold text-primary-700">
-                  {getInitials(account.role)}
-                </span>
-                <span className="min-w-0">
-                  <span className="block text-xs font-semibold text-slate-800">{account.role}</span>
-                  <span className="block truncate text-[10px] text-slate-400">{account.email}</span>
-                </span>
-              </button>
-            ))}
-          </div>
-          <p className="mt-3 text-center text-xs text-slate-400">
-            Tap a card to autofill, then press Log in.
-          </p>
-        </div> */}
 
         <p className="mt-6 flex items-center justify-center gap-2 text-center text-xs text-slate-400">
           <Badge tone="slate" size="sm">Secure</Badge>
